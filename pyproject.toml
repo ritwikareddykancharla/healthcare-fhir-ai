@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "healthscribe-fhir"
+version = "1.0.0"
+description = "Ambient Clinical SOAP Scribe, NegEx & Dosage Verifier, HL7 FHIR R4 Compiler, and Prior-Auth Engine on AWS"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.setuptools.packages.find]
+include = ["healthscribe_fhir*"]

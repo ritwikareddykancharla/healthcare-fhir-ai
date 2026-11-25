@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1220 740" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="HealthScribeFHIR System Architecture Diagram">
+  <defs>
+    <pattern id="dotGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#D4D4D8" />
+    </pattern>
+  </defs>
+  <rect x="0" y="0" width="1220" height="740" fill="#FAF7F2" />
+  <rect x="0" y="0" width="1220" height="740" fill="url(#dotGrid)" opacity="0.8" />
+
+  <!-- Layer 1 -->
+  <rect x="24" y="18" width="1172" height="146" fill="#FFFFFF" stroke="#18181B" stroke-width="2" stroke-dasharray="8 6" />
+  <text x="40" y="42" font-family="sans-serif" font-size="16" font-weight="800" fill="#0D9488">1. Clinician Browser &amp; Serverless AWS Edge ($0.00 Idle Infrastructure)</text>
+
+  <rect x="40" y="56" width="210" height="88" fill="#DBEAFE" stroke="#18181B" stroke-width="2.2" />
+  <text x="145" y="84" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="800" fill="#18181B">Clinician Browser UI</text>
+  <text x="145" y="106" text-anchor="middle" font-family="monospace" font-size="10" fill="#1E3A8A">4 Clinical &amp; Payer Tabs</text>
+  <text x="145" y="125" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#3F3F46">URL hash state · Dark mode</text>
+
+  <line x1="250" y1="100" x2="304" y2="100" stroke="#18181B" stroke-width="2" stroke-dasharray="5 4" />
+  <text x="277" y="90" text-anchor="middle" font-family="monospace" font-size="10" font-weight="700" fill="#18181B">HTTPS</text>
+
+  <rect x="306" y="56" width="246" height="88" fill="#CCFBF1" stroke="#18181B" stroke-width="2.2" />
+  <text x="429" y="84" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="800" fill="#18181B">Amazon CloudFront CDN</text>
+  <text x="429" y="106" text-anchor="middle" font-family="monospace" font-size="10" fill="#115E59">Unified TLS Edge Distribution</text>
+  <text x="429" y="125" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#3F3F46">/* -&gt; Private S3 · /api/* -&gt; Lambda</text>
+
+  <line x1="552" y1="80" x2="628" y2="68" stroke="#18181B" stroke-width="2" stroke-dasharray="5 4" />
+  <line x1="552" y1="118" x2="628" y2="128" stroke="#18181B" stroke-width="2" stroke-dasharray="5 4" />
+
+  <rect x="630" y="42" width="276" height="52" fill="#DCFCE7" stroke="#18181B" stroke-width="2" />
+  <text x="768" y="64" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="800" fill="#18181B">Private S3 Bucket (OAC)</text>
+  <text x="768" y="82" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#065F46">web/index.html · Public Access Blocked</text>
+
+  <rect x="630" y="102" width="276" height="52" fill="#FFE8D6" stroke="#18181B" stroke-width="2" />
+  <text x="768" y="124" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="800" fill="#18181B">AWS Lambda API (Python 3.12)</text>
+  <text x="768" y="142" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#9A3412">healthscribe_fhir/server.py · 512 MB</text>
+
+  <rect x="932" y="44" width="244" height="106" fill="#FEF3C7" stroke="#18181B" stroke-width="2" />
+  <text x="948" y="68" font-family="sans-serif" font-size="14" font-weight="800" fill="#92400E">Synthetic Clinical Guardrails</text>
+  <text x="948" y="90" font-family="monospace" font-size="9.5" fill="#18181B">• 100% synthetic outpatient data</text>
+  <text x="948" y="110" font-family="monospace" font-size="9.5" fill="#18181B">• Zero hourly HealthLake/RDS cost</text>
+  <text x="948" y="130" font-family="monospace" font-size="9.5" font-weight="700" fill="#0D9488">• 0.172 ms clinical safety gate</text>
+
+  <!-- Layer 2 -->
+  <rect x="24" y="190" width="1172" height="152" fill="#F0FDFA" stroke="#0D9488" stroke-width="2" stroke-dasharray="8 6" />
+  <text x="40" y="214" font-family="sans-serif" font-size="16" font-weight="800" fill="#0D9488">2. Span-Linked Ambient SOAP Scribe &amp; Deterministic Safety Gate (30 / 30 Errors Blocked · 0.172 ms p50)</text>
+
+  <rect x="40" y="230" width="356" height="94" fill="#F3E8FF" stroke="#18181B" stroke-width="2.2" />
+  <text x="218" y="256" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="800" fill="#5B21B6">Amazon Bedrock SOAP Scribe</text>
+  <text x="218" y="278" text-anchor="middle" font-family="monospace" font-size="10" fill="#18181B">us.amazon.nova-lite-v1:0 · Converse API</text>
+  <text x="218" y="298" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#4C1D95">12 / 12 passed · 1,693 ms p50 · utterance_id spans</text>
+
+  <rect x="432" y="230" width="356" height="94" fill="#FEE2E2" stroke="#18181B" stroke-width="2.2" />
+  <text x="610" y="256" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="800" fill="#991B1B">NegEx Clinical Polarity Verifier</text>
+  <text x="610" y="278" text-anchor="middle" font-family="monospace" font-size="10" fill="#18181B">CLIN-NEGEX-01 · CLIN-POLARITY-02</text>
+  <text x="610" y="298" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#7F1D1D">Blocks denied symptoms charted as positive</text>
+
+  <rect x="824" y="230" width="352" height="94" fill="#FEF3C7" stroke="#18181B" stroke-width="2.2" />
+  <text x="1000" y="256" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="800" fill="#92400E">Medication Dosage &amp; Unit Gate</text>
+  <text x="1000" y="278" text-anchor="middle" font-family="monospace" font-size="10" fill="#18181B">CLIN-DOSE-01 · CLIN-UNIT-02 · CLIN-FREQ-03</text>
+  <text x="1000" y="298" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#78350F">Blocks 10x dose, mg/mcg, and daily/weekly errors</text>
+
+  <!-- Layer 3 -->
+  <rect x="24" y="368" width="1172" height="154" fill="#F0FDF4" stroke="#065F46" stroke-width="2" stroke-dasharray="8 6" />
+  <text x="40" y="392" font-family="sans-serif" font-size="16" font-weight="800" fill="#065F46">3. HL7 FHIR R4 Transaction Compiler &amp; Payer Prior-Authorization Engine</text>
+
+  <rect x="40" y="408" width="548" height="96" fill="#DCFCE7" stroke="#18181B" stroke-width="2.2" />
+  <text x="314" y="434" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="800" fill="#18181B">HL7 FHIR R4 Bundle Compiler &amp; Validator</text>
+  <text x="314" y="456" text-anchor="middle" font-family="monospace" font-size="10" fill="#065F46">Patient · Encounter · Condition (ICD-10) · Observation (LOINC/UCUM) · MedRequest (RxNorm)</text>
+  <text x="314" y="478" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#3F3F46">4 / 4 bundles valid · 12 / 12 schema &amp; urn:uuid defects caught in 0.016 ms p50</text>
+
+  <rect x="628" y="408" width="548" height="96" fill="#DBEAFE" stroke="#18181B" stroke-width="2.2" />
+  <text x="902" y="434" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="800" fill="#18181B">Payer Medical-Necessity Prior-Auth Engine</text>
+  <text x="902" y="456" text-anchor="middle" font-family="monospace" font-size="10" fill="#1E3A8A">CPT 72148 Lumbar MRI · J3490-GLP1 Semaglutide · CPT 78452 Nuclear Stress</text>
+  <text x="902" y="478" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#3F3F46">8 / 8 determinations matched (0.29 ms p50) · Cites exact utterance_id spans</text>
+
+  <!-- Layer 4 -->
+  <rect x="24" y="548" width="1172" height="166" fill="#FFFBEB" stroke="#92400E" stroke-width="2" stroke-dasharray="8 6" />
+  <text x="40" y="572" font-family="sans-serif" font-size="16" font-weight="800" fill="#92400E">4. HIPAA Safe-Harbor 18-Identifier Vault &amp; SHA-256 SQLite WAL Audit Trail</text>
+
+  <rect x="40" y="590" width="548" height="104" fill="#CCFBF1" stroke="#18181B" stroke-width="2.2" />
+  <text x="314" y="618" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="800" fill="#115E59">HIPAA Safe-Harbor De-Identifier &amp; HMAC Vault</text>
+  <text x="314" y="640" text-anchor="middle" font-family="monospace" font-size="10" fill="#18181B">45 CFR 164.514(b)(2) · [PATIENT_8F2A] · [MRN_19C4] · Ages &gt; 89</text>
+  <text x="314" y="662" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#115E59">42 / 42 PHI spans redacted (100%) · 100% vitals &amp; dosages preserved (0.363 ms p50)</text>
+
+  <rect x="628" y="590" width="548" height="104" fill="#FEF3C7" stroke="#18181B" stroke-width="2.2" />
+  <text x="902" y="618" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="800" fill="#92400E">Tamper-Evident Clinical Audit Ledger</text>
+  <text x="902" y="640" text-anchor="middle" font-family="monospace" font-size="10" fill="#18181B">SQLite WAL · SHA-256(canonical_json + prev_hash)</text>
+  <text x="902" y="662" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#78350F">90 hash-chained clinical &amp; vault events verified in 0.642 ms</text>
+</svg>

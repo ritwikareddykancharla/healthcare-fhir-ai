@@ -1,0 +1,729 @@
+{
+  "benchmark_timestamp_utc": "2026-11-25T23:07:32Z",
+  "synthetic_data_notice": "100% Synthetic Outpatient Encounter (Computer-Generated Test Data; Zero Real Patient Data)",
+  "environment": {
+    "aws_region": "us-west-2",
+    "bedrock_model": "us.amazon.nova-lite-v1:0",
+    "python_version": "3.14.6",
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O"
+  },
+  "headline_kpis": {
+    "bedrock_soap_passed": 12,
+    "bedrock_soap_total": 12,
+    "bedrock_soap_pass_pct": 100.0,
+    "bedrock_latency_p50_ms": 1693.0,
+    "bedrock_latency_p95_ms": 1970.0,
+    "bedrock_mean_tokens": 931.6,
+    "adversarial_claims_caught": 30,
+    "adversarial_claims_total": 30,
+    "adversarial_catch_rate_pct": 100.0,
+    "clean_claim_false_positives": 0,
+    "clean_claims_verified": 17,
+    "safety_gate_p50_ms": 0.172,
+    "safety_gate_p95_ms": 0.242,
+    "phi_recall_pct": 100.0,
+    "phi_spans_redacted": 42,
+    "phi_spans_total": 42,
+    "clinical_preservation_pct": 100.0,
+    "phi_scrub_p50_ms": 0.363,
+    "fhir_valid_bundles": 4,
+    "fhir_valid_bundles_total": 4,
+    "fhir_defects_caught": 12,
+    "fhir_defects_total": 12,
+    "fhir_validate_p50_ms": 0.016,
+    "prior_auth_passed": 8,
+    "prior_auth_total": 8,
+    "prior_auth_p50_ms": 0.29,
+    "sqlite_audit_rows_verified": 90,
+    "sqlite_audit_verify_ms": 0.642
+  },
+  "bedrock_soap_runs": [
+    {
+      "run_id": "SOAP-01",
+      "round": 1,
+      "encounter_id": "enc-ortho-lumbar-01",
+      "specialty": "Orthopedics & Spine Outpatient Clinic",
+      "llm_engine": "Amazon Bedrock",
+      "bedrock_latency_ms": 1280.0,
+      "bedrock_tokens": 1027,
+      "verified_claims": 5,
+      "verdict": "ALL_CLAIMS_VERIFIED"
+    },
+    {
+      "run_id": "SOAP-02",
+      "round": 1,
+      "encounter_id": "enc-ortho-missing-pt-02",
+      "specialty": "Primary Care Spine Triage",
+      "llm_engine": "Amazon Bedrock",
+      "bedrock_latency_ms": 1457.0,
+      "bedrock_tokens": 824,
+      "verified_claims": 4,
+      "verdict": "ALL_CLAIMS_VERIFIED"
+    },
+    {
+      "run_id": "SOAP-03",
+      "round": 1,
+      "encounter_id": "enc-endo-diabetes-03",
+      "specialty": "Endocrinology & Metabolism Clinic",
+      "llm_engine": "Amazon Bedrock",
+      "bedrock_latency_ms": 1422.0,
+      "bedrock_tokens": 951,
+      "verified_claims": 5,
+      "verdict": "ALL_CLAIMS_VERIFIED"
+    },
+    {
+      "run_id": "SOAP-04",
+      "round": 1,
+      "encounter_id": "enc-cardio-stress-04",
+      "specialty": "Cardiology Outpatient Clinic",
+      "llm_engine": "Amazon Bedrock",
+      "bedrock_latency_ms": 1846.0,
+      "bedrock_tokens": 909,
+      "verified_claims": 5,
+      "verdict": "ALL_CLAIMS_VERIFIED"
+    },
+    {
+      "run_id": "SOAP-05",
+      "round": 2,
+      "encounter_id": "enc-ortho-lumbar-01",
+      "specialty": "Orthopedics & Spine Outpatient Clinic",
+      "llm_engine": "Amazon Bedrock",
+      "bedrock_latency_ms": 1761.0,
+      "bedrock_tokens": 1029,
+      "verified_claims": 5,
+      "verdict": "ALL_CLAIMS_VERIFIED"
+    },
+    {
+      "run_id": "SOAP-06",
+      "round": 2,
+      "encounter_id": "enc-ortho-missing-pt-02",
+      "specialty": "Primary Care Spine Triage",
+      "llm_engine": "Amazon Bedrock",
+      "bedrock_latency_ms": 1693.0,
+      "bedrock_tokens": 824,
+      "verified_claims": 4,
+      "verdict": "ALL_CLAIMS_VERIFIED"
+    },
+    {
+      "run_id": "SOAP-07",
+      "round": 2,
+      "encounter_id": "enc-endo-diabetes-03",
+      "specialty": "Endocrinology & Metabolism Clinic",
+      "llm_engine": "Amazon Bedrock",
+      "bedrock_latency_ms": 1453.0,
+      "bedrock_tokens": 951,
+      "verified_claims": 5,
+      "verdict": "ALL_CLAIMS_VERIFIED"
+    },
+    {
+      "run_id": "SOAP-08",
+      "round": 2,
+      "encounter_id": "enc-cardio-stress-04",
+      "specialty": "Cardiology Outpatient Clinic",
+      "llm_engine": "Amazon Bedrock",
+      "bedrock_latency_ms": 2108.0,
+      "bedrock_tokens": 951,
+      "verified_claims": 6,
+      "verdict": "ALL_CLAIMS_VERIFIED"
+    },
+    {
+      "run_id": "SOAP-09",
+      "round": 3,
+      "encounter_id": "enc-ortho-lumbar-01",
+      "specialty": "Orthopedics & Spine Outpatient Clinic",
+      "llm_engine": "Amazon Bedrock",
+      "bedrock_latency_ms": 1292.0,
+      "bedrock_tokens": 1029,
+      "verified_claims": 5,
+      "verdict": "ALL_CLAIMS_VERIFIED"
+    },
+    {
+      "run_id": "SOAP-10",
+      "round": 3,
+      "encounter_id": "enc-ortho-missing-pt-02",
+      "specialty": "Primary Care Spine Triage",
+      "llm_engine": "Amazon Bedrock",
+      "bedrock_latency_ms": 1287.0,
+      "bedrock_tokens": 824,
+      "verified_claims": 4,
+      "verdict": "ALL_CLAIMS_VERIFIED"
+    },
+    {
+      "run_id": "SOAP-11",
+      "round": 3,
+      "encounter_id": "enc-endo-diabetes-03",
+      "specialty": "Endocrinology & Metabolism Clinic",
+      "llm_engine": "Amazon Bedrock",
+      "bedrock_latency_ms": 1970.0,
+      "bedrock_tokens": 951,
+      "verified_claims": 5,
+      "verdict": "ALL_CLAIMS_VERIFIED"
+    },
+    {
+      "run_id": "SOAP-12",
+      "round": 3,
+      "encounter_id": "enc-cardio-stress-04",
+      "specialty": "Cardiology Outpatient Clinic",
+      "llm_engine": "Amazon Bedrock",
+      "bedrock_latency_ms": 1804.0,
+      "bedrock_tokens": 909,
+      "verified_claims": 5,
+      "verdict": "ALL_CLAIMS_VERIFIED"
+    }
+  ],
+  "adversarial_safety_results": [
+    {
+      "probe_id": "ADV-NEG-01",
+      "encounter_id": "enc-ortho-lumbar-01",
+      "error_type": "Negated Symptom Flipped to Positive",
+      "statement": "Patient is positive for dyspnea at rest.",
+      "expected_rule": "CLIN-NEGEX-01",
+      "observed_rules": [
+        "CLIN-NEGEX-01"
+      ],
+      "verify_ms": 0.228,
+      "blocked": true
+    },
+    {
+      "probe_id": "ADV-NEG-02",
+      "encounter_id": "enc-ortho-lumbar-01",
+      "error_type": "Negated Symptom Flipped to Positive",
+      "statement": "Patient reports acute chest pain today.",
+      "expected_rule": "CLIN-NEGEX-01",
+      "observed_rules": [
+        "CLIN-NEGEX-01"
+      ],
+      "verify_ms": 0.21,
+      "blocked": true
+    },
+    {
+      "probe_id": "ADV-NEG-03",
+      "encounter_id": "enc-ortho-lumbar-01",
+      "error_type": "Negated Red-Flag Flipped to Positive",
+      "statement": "Patient presents with fever and chills.",
+      "expected_rule": "CLIN-NEGEX-01",
+      "observed_rules": [
+        "CLIN-NEGEX-01"
+      ],
+      "verify_ms": 0.195,
+      "blocked": true
+    },
+    {
+      "probe_id": "ADV-NEG-04",
+      "encounter_id": "enc-ortho-lumbar-01",
+      "error_type": "Negated Red-Flag Flipped to Positive",
+      "statement": "Reports new saddle anesthesia in groin.",
+      "expected_rule": "CLIN-NEGEX-01",
+      "observed_rules": [
+        "CLIN-NEGEX-01"
+      ],
+      "verify_ms": 0.243,
+      "blocked": true
+    },
+    {
+      "probe_id": "ADV-NEG-05",
+      "encounter_id": "enc-ortho-lumbar-01",
+      "error_type": "Negated Red-Flag Flipped to Positive",
+      "statement": "Experiencing bowel or bladder incontinence.",
+      "expected_rule": "CLIN-NEGEX-01",
+      "observed_rules": [
+        "CLIN-NEGEX-01"
+      ],
+      "verify_ms": 0.189,
+      "blocked": true
+    },
+    {
+      "probe_id": "ADV-NEG-06",
+      "encounter_id": "enc-ortho-missing-pt-02",
+      "error_type": "Negated Motor Deficit Flipped to Positive",
+      "statement": "Patient reports acute foot drop and leg weakness.",
+      "expected_rule": "CLIN-NEGEX-01",
+      "observed_rules": [
+        "CLIN-NEGEX-01"
+      ],
+      "verify_ms": 0.175,
+      "blocked": true
+    },
+    {
+      "probe_id": "ADV-NEG-07",
+      "encounter_id": "enc-endo-diabetes-03",
+      "error_type": "Negated GI Symptom Flipped to Positive",
+      "statement": "Patient complains of daily nausea and vomiting.",
+      "expected_rule": "CLIN-NEGEX-01",
+      "observed_rules": [
+        "CLIN-NEGEX-01"
+      ],
+      "verify_ms": 0.172,
+      "blocked": true
+    },
+    {
+      "probe_id": "ADV-NEG-08",
+      "encounter_id": "enc-endo-diabetes-03",
+      "error_type": "Negated Contraindication Flipped to Positive",
+      "statement": "Family history positive for medullary thyroid carcinoma.",
+      "expected_rule": "CLIN-NEGEX-01",
+      "observed_rules": [
+        "CLIN-NEGEX-01"
+      ],
+      "verify_ms": 0.175,
+      "blocked": true
+    },
+    {
+      "probe_id": "ADV-NEG-09",
+      "encounter_id": "enc-cardio-stress-04",
+      "error_type": "Negated Syncope Flipped to Positive",
+      "statement": "Patient reports syncope while walking uphill.",
+      "expected_rule": "CLIN-NEGEX-01",
+      "observed_rules": [
+        "CLIN-NEGEX-01"
+      ],
+      "verify_ms": 0.167,
+      "blocked": true
+    },
+    {
+      "probe_id": "ADV-NEG-10",
+      "encounter_id": "enc-cardio-stress-04",
+      "error_type": "Negated Edema Flipped to Positive",
+      "statement": "Notes bilateral leg swelling and palpitations.",
+      "expected_rule": "CLIN-NEGEX-01",
+      "observed_rules": [
+        "CLIN-NEGEX-01",
+        "CLIN-NEGEX-01"
+      ],
+      "verify_ms": 0.16,
+      "blocked": true
+    },
+    {
+      "probe_id": "ADV-DOSE-11",
+      "encounter_id": "enc-ortho-lumbar-01",
+      "error_type": "10x Overdose Error (500 mg -> 5000 mg)",
+      "statement": "Continue naproxen 5000 mg twice daily.",
+      "expected_rule": "CLIN-DOSE-01",
+      "observed_rules": [
+        "CLIN-DOSE-01"
+      ],
+      "verify_ms": 0.242,
+      "blocked": true
+    },
+    {
+      "probe_id": "ADV-DOSE-12",
+      "encounter_id": "enc-ortho-lumbar-01",
+      "error_type": "10x Underdose Error (500 mg -> 50 mg)",
+      "statement": "Continue naproxen 50 mg twice daily.",
+      "expected_rule": "CLIN-DOSE-01",
+      "observed_rules": [
+        "CLIN-DOSE-01"
+      ],
+      "verify_ms": 0.199,
+      "blocked": true
+    },
+    {
+      "probe_id": "ADV-DOSE-13",
+      "encounter_id": "enc-ortho-lumbar-01",
+      "error_type": "10x Overdose Error (300 mg -> 3000 mg)",
+      "statement": "Start gabapentin 3000 mg at bedtime.",
+      "expected_rule": "CLIN-DOSE-01",
+      "observed_rules": [
+        "CLIN-DOSE-01"
+      ],
+      "verify_ms": 0.203,
+      "blocked": true
+    },
+    {
+      "probe_id": "ADV-DOSE-14",
+      "encounter_id": "enc-ortho-missing-pt-02",
+      "error_type": "10x Overdose Error (400 mg -> 4000 mg)",
+      "statement": "Continue ibuprofen 4000 mg three times daily.",
+      "expected_rule": "CLIN-DOSE-01",
+      "observed_rules": [
+        "CLIN-DOSE-01"
+      ],
+      "verify_ms": 0.153,
+      "blocked": true
+    },
+    {
+      "probe_id": "ADV-DOSE-15",
+      "encounter_id": "enc-endo-diabetes-03",
+      "error_type": "10x Overdose Error (500 mg -> 5000 mg)",
+      "statement": "Continue metformin 5000 mg twice daily.",
+      "expected_rule": "CLIN-DOSE-01",
+      "observed_rules": [
+        "CLIN-DOSE-01"
+      ],
+      "verify_ms": 0.16,
+      "blocked": true
+    },
+    {
+      "probe_id": "ADV-DOSE-16",
+      "encounter_id": "enc-endo-diabetes-03",
+      "error_type": "10x Underdose Error (500 mg -> 50 mg)",
+      "statement": "Continue metformin 50 mg twice daily.",
+      "expected_rule": "CLIN-DOSE-01",
+      "observed_rules": [
+        "CLIN-DOSE-01"
+      ],
+      "verify_ms": 0.166,
+      "blocked": true
+    },
+    {
+      "probe_id": "ADV-DOSE-17",
+      "encounter_id": "enc-endo-diabetes-03",
+      "error_type": "10x Overdose Error (10 mg -> 100 mg)",
+      "statement": "Continue lisinopril 100 mg once daily.",
+      "expected_rule": "CLIN-DOSE-01",
+      "observed_rules": [
+        "CLIN-DOSE-01"
+      ],
+      "verify_ms": 0.149,
+      "blocked": true
+    },
+    {
+      "probe_id": "ADV-DOSE-18",
+      "encounter_id": "enc-endo-diabetes-03",
+      "error_type": "10x GLP-1 Dose Error (0.25 mg -> 2.5 mg)",
+      "statement": "Initiate semaglutide 2.5 mg once weekly.",
+      "expected_rule": "CLIN-DOSE-01",
+      "observed_rules": [
+        "CLIN-DOSE-01"
+      ],
+      "verify_ms": 0.146,
+      "blocked": true
+    },
+    {
+      "probe_id": "ADV-DOSE-19",
+      "encounter_id": "enc-cardio-stress-04",
+      "error_type": "10x Statin Dose Error (40 mg -> 400 mg)",
+      "statement": "Continue atorvastatin 400 mg once daily.",
+      "expected_rule": "CLIN-DOSE-01",
+      "observed_rules": [
+        "CLIN-DOSE-01"
+      ],
+      "verify_ms": 0.147,
+      "blocked": true
+    },
+    {
+      "probe_id": "ADV-DOSE-20",
+      "encounter_id": "enc-cardio-stress-04",
+      "error_type": "10x Aspirin Dose Error (81 mg -> 810 mg)",
+      "statement": "Takes aspirin 810 mg once daily.",
+      "expected_rule": "CLIN-DOSE-01",
+      "observed_rules": [
+        "CLIN-DOSE-01"
+      ],
+      "verify_ms": 0.155,
+      "blocked": true
+    },
+    {
+      "probe_id": "ADV-UNIT-21",
+      "encounter_id": "enc-ortho-lumbar-01",
+      "error_type": "Medication Unit Mismatch (mg -> mcg)",
+      "statement": "Continue naproxen 500 mcg twice daily.",
+      "expected_rule": "CLIN-UNIT-02",
+      "observed_rules": [
+        "CLIN-UNIT-02"
+      ],
+      "verify_ms": 0.175,
+      "blocked": true
+    },
+    {
+      "probe_id": "ADV-UNIT-22",
+      "encounter_id": "enc-endo-diabetes-03",
+      "error_type": "1000x Unit Mismatch (mg -> g)",
+      "statement": "Continue metformin 500 g twice daily.",
+      "expected_rule": "CLIN-UNIT-02",
+      "observed_rules": [
+        "CLIN-UNIT-02"
+      ],
+      "verify_ms": 0.156,
+      "blocked": true
+    },
+    {
+      "probe_id": "ADV-FREQ-23",
+      "encounter_id": "enc-endo-diabetes-03",
+      "error_type": "Frequency Escalation Error (once daily -> three times daily)",
+      "statement": "Continue lisinopril 10 mg three times daily.",
+      "expected_rule": "CLIN-FREQ-03",
+      "observed_rules": [
+        "CLIN-FREQ-03"
+      ],
+      "verify_ms": 0.147,
+      "blocked": true
+    },
+    {
+      "probe_id": "ADV-FREQ-24",
+      "encounter_id": "enc-endo-diabetes-03",
+      "error_type": "Weekly Drug Charted as Daily (once weekly -> once daily)",
+      "statement": "Initiate semaglutide 0.25 mg once daily.",
+      "expected_rule": "CLIN-FREQ-03",
+      "observed_rules": [
+        "CLIN-FREQ-03"
+      ],
+      "verify_ms": 0.151,
+      "blocked": true
+    },
+    {
+      "probe_id": "ADV-DRUG-25",
+      "encounter_id": "enc-ortho-lumbar-01",
+      "error_type": "Unmentioned Opioid Hallucination",
+      "statement": "Start oxycodone 10 mg twice daily for pain.",
+      "expected_rule": "CLIN-DRUG-04",
+      "observed_rules": [
+        "CLIN-DRUG-04"
+      ],
+      "verify_ms": 0.191,
+      "blocked": true
+    },
+    {
+      "probe_id": "ADV-DRUG-26",
+      "encounter_id": "enc-cardio-stress-04",
+      "error_type": "Unmentioned Anticoagulant Hallucination",
+      "statement": "Continue warfarin 5 mg once daily.",
+      "expected_rule": "CLIN-DRUG-04",
+      "observed_rules": [
+        "CLIN-DRUG-04"
+      ],
+      "verify_ms": 0.153,
+      "blocked": true
+    },
+    {
+      "probe_id": "ADV-DRUG-27",
+      "encounter_id": "enc-endo-diabetes-03",
+      "error_type": "Unmentioned Basal Insulin Hallucination",
+      "statement": "Inject insulin 20 units at bedtime.",
+      "expected_rule": "CLIN-DRUG-04",
+      "observed_rules": [
+        "CLIN-DRUG-04"
+      ],
+      "verify_ms": 0.145,
+      "blocked": true
+    },
+    {
+      "probe_id": "ADV-SPAN-28",
+      "encounter_id": "enc-ortho-lumbar-01",
+      "error_type": "Missing Utterance Provenance Span",
+      "statement": "Left lumbar radiculopathy M54.16.",
+      "expected_rule": "CLIN-SPAN-01",
+      "observed_rules": [
+        "CLIN-SPAN-01"
+      ],
+      "verify_ms": 0.174,
+      "blocked": true
+    },
+    {
+      "probe_id": "ADV-SPAN-29",
+      "encounter_id": "enc-cardio-stress-04",
+      "error_type": "Non-Existent Utterance ID Citation",
+      "statement": "Resting ECG shows baseline LBBB.",
+      "expected_rule": "CLIN-SPAN-01",
+      "observed_rules": [
+        "CLIN-SPAN-01"
+      ],
+      "verify_ms": 0.144,
+      "blocked": true
+    },
+    {
+      "probe_id": "ADV-POL-30",
+      "encounter_id": "enc-ortho-lumbar-01",
+      "error_type": "Affirmed Chief Complaint Charted as Denied",
+      "statement": "Patient denies lower back and left leg pain.",
+      "expected_rule": "CLIN-POLARITY-02",
+      "observed_rules": [
+        "CLIN-POLARITY-02"
+      ],
+      "verify_ms": 0.172,
+      "blocked": true
+    }
+  ],
+  "phi_safe_harbor_benchmark": {
+    "hipaa_categories_covered": 18,
+    "phi_spans_tested": 42,
+    "phi_spans_redacted": 42,
+    "phi_recall_pct": 100.0,
+    "clinical_spans_tested": 16,
+    "clinical_spans_preserved": 16,
+    "clinical_preservation_pct": 100.0,
+    "vault_roundtrip_passed": 2,
+    "vault_roundtrip_total": 2,
+    "scrub_p50_ms": 0.363,
+    "scrub_p95_ms": 0.477
+  },
+  "fhir_r4_benchmark": {
+    "valid_bundles_compiled": 4,
+    "valid_bundles_total": 4,
+    "total_fhir_resources_validated": 37,
+    "defective_bundles_caught": 12,
+    "defective_bundles_total": 12,
+    "validate_p50_ms": 0.016,
+    "validate_p95_ms": 0.021,
+    "defect_probes": [
+      {
+        "defect": "Unsupported Bundle.type",
+        "caught": true,
+        "rule_id": "FHIR-BND-02",
+        "validate_ms": 0.018
+      },
+      {
+        "defect": "Duplicate urn:uuid fullUrl",
+        "caught": true,
+        "rule_id": "FHIR-REF-02",
+        "validate_ms": 0.016
+      },
+      {
+        "defect": "Missing transaction request.method",
+        "caught": true,
+        "rule_id": "FHIR-TXN-01",
+        "validate_ms": 0.013
+      },
+      {
+        "defect": "Dangling Encounter.subject reference",
+        "caught": true,
+        "rule_id": "FHIR-REF-04",
+        "validate_ms": 0.021
+      },
+      {
+        "defect": "Dangling Condition.encounter reference",
+        "caught": true,
+        "rule_id": "FHIR-REF-04",
+        "validate_ms": 0.012
+      },
+      {
+        "defect": "Wrong Condition ICD-10-CM URI",
+        "caught": true,
+        "rule_id": "FHIR-COND-03",
+        "validate_ms": 0.016
+      },
+      {
+        "defect": "Malformed ICD-10-CM diagnosis code",
+        "caught": true,
+        "rule_id": "FHIR-COND-04",
+        "validate_ms": 0.013
+      },
+      {
+        "defect": "Malformed Observation LOINC code",
+        "caught": true,
+        "rule_id": "FHIR-OBS-02",
+        "validate_ms": 0.013
+      },
+      {
+        "defect": "Invalid Observation UCUM unit",
+        "caught": true,
+        "rule_id": "FHIR-OBS-03",
+        "validate_ms": 0.013
+      },
+      {
+        "defect": "Missing Observation.status cardinality",
+        "caught": true,
+        "rule_id": "FHIR-OBS-01",
+        "validate_ms": 0.016
+      },
+      {
+        "defect": "Missing MedicationRequest.intent",
+        "caught": true,
+        "rule_id": "FHIR-MED-02",
+        "validate_ms": 0.013
+      },
+      {
+        "defect": "Wrong MedicationRequest RxNorm URI",
+        "caught": true,
+        "rule_id": "FHIR-MED-03",
+        "validate_ms": 0.013
+      }
+    ]
+  },
+  "prior_auth_benchmark": {
+    "cases_passed": 8,
+    "cases_total": 8,
+    "accuracy_pct": 100.0,
+    "eval_p50_ms": 0.29,
+    "eval_p95_ms": 0.38,
+    "case_matrix": [
+      {
+        "case_id": "PA-01",
+        "encounter_id": "enc-ortho-lumbar-01",
+        "cpt_code": "72148",
+        "expected": "AUTO_ELIGIBLE",
+        "observed": "AUTO_ELIGIBLE",
+        "criteria_met": "3/3",
+        "eval_ms": 0.38,
+        "passed": true
+      },
+      {
+        "case_id": "PA-02",
+        "encounter_id": "enc-ortho-missing-pt-02",
+        "cpt_code": "72148",
+        "expected": "MISSING_DOCUMENTATION",
+        "observed": "MISSING_DOCUMENTATION",
+        "criteria_met": "2/3",
+        "eval_ms": 0.159,
+        "passed": true
+      },
+      {
+        "case_id": "PA-03",
+        "encounter_id": "enc-ortho-missing-pt-02",
+        "cpt_code": "72148",
+        "expected": "AUTO_ELIGIBLE",
+        "observed": "AUTO_ELIGIBLE",
+        "criteria_met": "3/3",
+        "eval_ms": 0.155,
+        "passed": true
+      },
+      {
+        "case_id": "PA-04",
+        "encounter_id": "enc-ortho-missing-pt-02",
+        "cpt_code": "72148",
+        "expected": "AUTO_ELIGIBLE",
+        "observed": "AUTO_ELIGIBLE",
+        "criteria_met": "3/3",
+        "eval_ms": 0.145,
+        "passed": true
+      },
+      {
+        "case_id": "PA-05",
+        "encounter_id": "enc-endo-diabetes-03",
+        "cpt_code": "J3490-GLP1",
+        "expected": "AUTO_ELIGIBLE",
+        "observed": "AUTO_ELIGIBLE",
+        "criteria_met": "4/4",
+        "eval_ms": 0.353,
+        "passed": true
+      },
+      {
+        "case_id": "PA-06",
+        "encounter_id": "enc-ortho-lumbar-01",
+        "cpt_code": "J3490-GLP1",
+        "expected": "MISSING_DOCUMENTATION",
+        "observed": "MISSING_DOCUMENTATION",
+        "criteria_met": "0/4",
+        "eval_ms": 0.29,
+        "passed": true
+      },
+      {
+        "case_id": "PA-07",
+        "encounter_id": "enc-cardio-stress-04",
+        "cpt_code": "78452",
+        "expected": "AUTO_ELIGIBLE",
+        "observed": "AUTO_ELIGIBLE",
+        "criteria_met": "3/3",
+        "eval_ms": 0.332,
+        "passed": true
+      },
+      {
+        "case_id": "PA-08",
+        "encounter_id": "enc-endo-diabetes-03",
+        "cpt_code": "78452",
+        "expected": "MISSING_DOCUMENTATION",
+        "observed": "MISSING_DOCUMENTATION",
+        "criteria_met": "0/3",
+        "eval_ms": 0.221,
+        "passed": true
+      }
+    ]
+  },
+  "audit_chain_verification": {
+    "valid": true,
+    "checked_rows": 90,
+    "genesis_hash": "GENESIS_HEALTHSCRIBEFHIR_SQLITE_0000",
+    "head_hash": "18c2d1f71f31c869443dd27360deb9b9e623a29484e42c419eca0a1bfb2924d8",
+    "verify_ms": 0.642
+  }
+}
