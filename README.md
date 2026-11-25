@@ -5,7 +5,7 @@
 - **GitHub Repository**: https://github.com/ritwikareddykancharla/healthcare-fhir-ai
 - **Synthetic Data Notice**: 100% of patient encounters, names, MRNs, NPIs, dates, and vitals in this repository are synthetic computer-generated outpatient records containing zero real patient data.
 
-HealthScribeFHIR is a clinical documentation, healthcare interoperability, and prior-authorization workflow engine built on **Amazon CloudFront + Private Amazon S3 (OAC) + AWS Lambda (`python3.12`) + SQLite WAL + Amazon Bedrock (`us.amazon.nova-lite-v1:0`)** with `$0.00` idle infrastructure cost.
+HealthScribeFHIR is a clinical documentation, healthcare interoperability, and prior-authorization workflow engine built on **Amazon CloudFront + Private Amazon S3 (OAC) + AWS Lambda (serverless) + SQLite WAL + Amazon Bedrock (`us.amazon.nova-lite-v1:0`)** with `$0.00` idle infrastructure cost.
 
 ![HealthScribeFHIR System Architecture](docs/architecture.svg)
 

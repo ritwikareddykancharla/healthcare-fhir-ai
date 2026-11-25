@@ -953,7 +953,7 @@
       <div class="overview-callout">
         <h3>Overview</h3>
         <p>
-          HealthScribeFHIR connects outpatient exam-room documentation to downstream interoperability and insurance clearance. Amazon Bedrock (<code>us.amazon.nova-lite-v1:0</code>) synthesizes structured <code>Subjective / Objective / Assessment / Plan</code> notes where every clinical claim cites exact <code>utterance_id</code> dialogue timestamps. Before a note reaches clinician sign-off, a deterministic Python verifier checks clinical polarity and medication dosing in <code>0.172 ms</code> (<code>p50</code>), compiles verified findings into schema-checked <code>HL7 FHIR R4</code> transaction Bundles in <code>0.016 ms</code>, evaluates payer medical-necessity rules in <code>0.29 ms</code>, and replaces all 18 HIPAA Safe-Harbor identifier classes with reversible HMAC-SHA256 vault tokens in <code>0.363 ms</code>.
+          HealthScribeFHIR connects outpatient exam-room documentation to downstream interoperability and insurance clearance. Amazon Bedrock (<code>us.amazon.nova-lite-v1:0</code>) synthesizes structured <code>Subjective / Objective / Assessment / Plan</code> notes where every clinical claim cites exact <code>utterance_id</code> dialogue timestamps. Before a note reaches clinician sign-off, a deterministic safety gate checks clinical polarity and medication dosing in <code>0.172 ms</code> (<code>p50</code>), compiles verified findings into schema-checked <code>HL7 FHIR R4</code> transaction Bundles in <code>0.016 ms</code>, evaluates payer medical-necessity rules in <code>0.29 ms</code>, and replaces all 18 HIPAA Safe-Harbor identifier classes with reversible HMAC-SHA256 vault tokens in <code>0.363 ms</code>.
         </p>
       </div>
 
@@ -1018,7 +1018,7 @@
           <span class="section-kicker">02 · Architecture</span>
           <h2 class="section-title">Architecture</h2>
           <p class="section-desc">
-            Static assets are served from a private Amazon S3 bucket behind CloudFront OAC, and <code>/api/*</code> routes execute on AWS Lambda (Python 3.12) invoking Amazon Bedrock on demand. Click any diagram component to inspect its module, clinical invariants, and measured latency.
+            Static assets are served from a private Amazon S3 bucket behind CloudFront OAC, and <code>/api/*</code> routes execute on AWS Lambda invoking Amazon Bedrock on demand. Click any diagram component to inspect its module, clinical invariants, and measured latency.
           </p>
         </div>
       </div>
@@ -1049,7 +1049,7 @@
 
           <!-- LAYER 1: BROWSER & SERVERLESS AWS EDGE -->
           <path d="M 22,18 Q 610,14 1196,19 Q 1201,92 1195,164 Q 608,168 24,163 Q 19,90 22,18 Z" fill="#FAFAFA" stroke="#71717A" stroke-width="1.6" stroke-dasharray="8 6" />
-          <text x="36" y="41" class="svg-title" font-size="21" font-weight="700" fill="#0D9488">① Clinician Browser &amp; Serverless AWS Edge (CloudFront + Private S3 OAC + Python 3.12 Lambda)</text>
+          <text x="36" y="41" class="svg-title" font-size="21" font-weight="700" fill="#0D9488">① Clinician Browser &amp; Serverless AWS Edge (CloudFront + Private S3 OAC + AWS Lambda)</text>
 
           <g class="arch-node selected" data-arch-node="edge-browser" tabindex="0">
             <path d="M 38,55 Q 136,52 234,56 Q 238,96 233,138 Q 135,141 39,137 Q 35,95 38,55 Z" fill="#DBEAFE" />
@@ -1089,7 +1089,7 @@
           <g class="arch-node" data-arch-node="edge-lambda" tabindex="0">
             <path d="M 640,100 Q 775,97 910,101 Q 913,127 909,153 Q 774,156 641,152 Q 637,126 640,100 Z" fill="#FFE8D6" />
             <path class="arch-stroke-main" d="M 640,100 Q 775,97 910,101 Q 913,127 909,153 Q 774,156 641,152 Q 637,126 640,100 Z" fill="none" stroke="#18181B" stroke-width="2" />
-            <text x="775" y="123" text-anchor="middle" class="svg-title" font-size="20" font-weight="700" fill="#18181B">AWS Lambda API (Python 3.12)</text>
+            <text x="775" y="123" text-anchor="middle" class="svg-title" font-size="20" font-weight="700" fill="#18181B">AWS Lambda API</text>
             <text x="775" y="142" text-anchor="middle" class="svg-mono" font-size="9.4" fill="#9A3412">healthscribe_fhir/server.py · 512 MB</text>
           </g>
 
@@ -1224,7 +1224,7 @@
           <span class="section-kicker">03 · Implementation</span>
           <h2 class="section-title">Implementation</h2>
           <p class="section-desc">
-            HealthScribeFHIR separates probabilistic clinical note drafting from deterministic polarity, dosage, HL7 FHIR R4, payer prior-authorization, and HIPAA de-identification rules across five typed Python 3.12 modules.
+            HealthScribeFHIR separates probabilistic clinical note drafting from deterministic polarity, dosage, HL7 FHIR R4, payer prior-authorization, and HIPAA de-identification rules across five typed AWS Lambda modules.
           </p>
         </div>
         <span class="tag tag-pass">12 / 12 Unit Tests Passing</span>
@@ -1329,7 +1329,7 @@
           <span class="step-badge">03 · SERVERLESS FHIR VALIDATOR VS MANAGED HEALTHLAKE</span>
           <h3 style="font-size:1.08rem; font-size:1.08rem; font-weight:800; margin:0.45rem 0;">Zero Idle Infrastructure Cost vs Full Terminology Server</h3>
           <p style="font-size:0.92rem; color:var(--ink-muted); line-height:1.68;">
-            Managed FHIR datastores such as AWS HealthLake bill continuously by the hour even when idle. Compiling and validating <code>HL7 FHIR R4</code> transaction Bundles inside Python 3.12 AWS Lambda + SQLite WAL keeps idle cost at <code>$0.00</code> and validates bundles in <code>0.016 ms</code>, trading away full 100,000-concept SNOMED-CT subsumption queries.
+            Managed FHIR datastores such as AWS HealthLake bill continuously by the hour even when idle. Compiling and validating <code>HL7 FHIR R4</code> transaction Bundles inside AWS Lambda + SQLite WAL keeps idle cost at <code>$0.00</code> and validates bundles in <code>0.016 ms</code>, trading away full 100,000-concept SNOMED-CT subsumption queries.
           </p>
         </div>
 
@@ -1673,7 +1673,7 @@
         <strong>HealthScribeFHIR</strong> · Ambient Clinical SOAP Scribe, NegEx/Dosage Safety Gate, HL7 FHIR R4 &amp; Prior Authorization · 100% Synthetic Data
       </div>
       <div class="mono" style="font-size:0.74rem;">
-        AWS CloudFront + Private S3 OAC + Python 3.12 Lambda + Amazon Bedrock
+        AWS CloudFront + Private S3 OAC + AWS Lambda + Amazon Bedrock
       </div>
     </footer>
   </main>
@@ -1768,7 +1768,7 @@
           title: "Amazon CloudFront CDN",
           module: "infra/deploy_cloudfront.sh",
           metric: "HTTPS TLS 1.3 · Single Origin Domain",
-          summary: "Serves static UI assets from Private S3 via Origin Access Control (OAC) and routes /api/* requests directly to the Python 3.12 AWS Lambda Function URL without CORS preflight round-trips."
+          summary: "Serves static UI assets from Private S3 via Origin Access Control (OAC) and routes /api/* requests directly to the AWS Lambda Function URL without CORS preflight round-trips."
         },
         "edge-s3": {
           plane: "Plane 01 · Static Origin",
@@ -1779,7 +1779,7 @@
         },
         "edge-lambda": {
           plane: "Plane 01 · Compute Origin",
-          title: "AWS Lambda Python 3.12 API",
+          title: "AWS Lambda API",
           module: "healthscribe_fhir/server.py (lambda_handler)",
           metric: "512 MB · 30s Timeout · On-Demand",
           summary: "Handles /api/health, /api/scribe/generate, /api/fhir/validate, /api/prior-auth/check, /api/phi/scrub, /api/benchmarks, and /api/reset with zero hourly server or database charges."
