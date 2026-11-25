@@ -1,7 +1,7 @@
 # HealthScribeFHIR: Ambient Clinical SOAP Scribe, NegEx/Dosage Gate, HL7 FHIR R4 & Prior Auth
 
-- **Live CloudFront Studio**: Pending deployment URL
-- **Live `/api/health` Endpoint**: Pending deployment URL
+- **Live CloudFront Studio**: https://d1l2bqblr30kwe.cloudfront.net
+- **Live `/api/health` Endpoint**: https://d1l2bqblr30kwe.cloudfront.net/api/health
 - **GitHub Repository**: https://github.com/ritwikareddykancharla/healthcare-fhir-ai
 - **Synthetic Data Notice**: 100% of patient encounters, names, MRNs, NPIs, dates, and vitals in this repository are synthetic computer-generated outpatient records containing zero real patient data.
 
